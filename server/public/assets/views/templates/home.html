@@ -1,0 +1,45 @@
+<div class="home container"  >
+<!--<h3 >{{title}}</h3>-->
+    <!--<p>{{test}}</p>-->
+<!--<md-content>-->
+<!--<md-toolbar class="md-table-toolbar ">-->
+    <!--<div layout-align="center center" layout="column" class="md-toolbar-tools">-->
+        <!--<span class="white">Repairs</span>-->
+    <!--</div>-->
+<!--</md-toolbar>-->
+<!--</md-content>-->
+<!-- exact table from live demo -->
+    <table st-table="displayedResults" st-safe-src="repairs.object" class="table table-striped">
+        <thead>
+        <tr >
+            <th st-sort="">Repair Number</th>
+            <th st-sort="">Customer</th>
+            <th st-sort="">Vehicle</th>
+            <th st-sort="">Repair type</th>
+            <th st-sort="">Date of Repair</th>
+            <th st-sort="">Mileage</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <!--currently inop, need to inject the data into this controller.-->
+        <tr st-select-row="result" st-select-mode="single"  ng-repeat="result in displayedResults">
+            <td>{{result.id}}</td>
+            <td>{{result.first_name}} {{result.last_name}}</td>
+            <td>{{result.year}} {{result.make}} {{result.model}}</td>
+            <td>{{result.type}}</td>
+            <td>{{result.date_of_repair | date : 'longDate' : '+0600'}}</td>
+            <td>{{result.mileage}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="15"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!--ng-click="getParts(repair.id); edit($event,repair) " -->

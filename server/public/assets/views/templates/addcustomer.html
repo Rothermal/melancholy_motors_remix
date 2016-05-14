@@ -1,0 +1,37 @@
+<md-content layout-padding class="taller">
+    <div  class="add-customer" >
+        <div layout-align="center center" layout="column" class="green">
+            <h3 class="md-title white  ">Add a New Customer</h3>
+        </div>
+        <form name="new-Customer" class="inner-form">
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>First Name</label>
+                    <input ng-model="customer.first_name">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Last Name</label>
+                    <input ng-model="customer.last_name">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input ng-model="customer.email">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Cell Phone #</label>
+                    <input  type="tel" maxlength="12" ng-model="customer.phone">
+                </md-input-container>
+            </div>
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button ng-click="newCustomer(customer)" class="md-raised">SUBMIT</md-button>
+            </section>
+        </form>
+    </div>
+</md-content>
+

@@ -1,0 +1,51 @@
+<md-content layout-padding class="taller">
+    <div class="add-customer">
+        <div layout-align="center center" layout="column" class="green">
+            <h3 class="md-title white ">Add a Part</h3>
+        </div>
+        <form name="new-parts" class="inner-form">
+            <div layout-gt-sm="row">
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>List Of Repairs </label>
+                <md-select  ng-model="repair">
+                    <md-option ng-repeat="repair in repairs.object | orderBy : '-id'" >
+                        {{repair.id}}     {{repair.type}} {{repair.first_name}} {{repair.last_name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            </div>
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Part Name</label>
+                    <input ng-model="part.name">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Description</label>
+                    <input ng-model="part.description">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Vendor </label>
+                    <md-select  ng-model="part.vendor">
+                        <md-option ng-repeat="vendor in vendorArray" >{{vendor}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Part Cost</label>
+                    <input  type="number"  ng-model="part.cost">
+                </md-input-container>
+            </div>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button ng-click="addPart(part,repair)" class="md-raised">Add Part to Repair</md-button>
+            </section>
+
+
+        </form>
+    </div>
+</md-content>
+</div>
