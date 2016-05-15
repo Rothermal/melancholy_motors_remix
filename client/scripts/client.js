@@ -29,6 +29,14 @@ myApp.config(['$routeProvider','$locationProvider',
             templateUrl: 'assets/views/templates/addParts.html',
             controller: 'PartsController'
         })
+        .when('/register', {
+            templateUrl: 'assets/views/templates/register.html',
+            controller: 'LoginController'
+        })
+        .when('/login', {
+            templateUrl: 'assets/views/templates/login.html',
+            controller: 'LoginController'
+        })
         .otherwise({
             redirectTo: '/'
         });

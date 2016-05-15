@@ -5,7 +5,7 @@ body{
     background-color: #4F4D3F;
     height: 135px;
     background-size: 100%;
-    color: whitesmoke;
+    color: #184840;
 }
 
 .home {
@@ -20,7 +20,7 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: #000000;
-    color: aliceblue;
+    color: #184840;
 }
 .login-title{
     margin-top:7%;
@@ -54,7 +54,7 @@ p{
 
 }
 .white{
-    color: whitesmoke !important;
+    /*color: whitesmoke !important;*/
 }
 .edit-form{
     padding: 20px 25px;
@@ -88,9 +88,5 @@ p{
 .blue{
     color: #003366 !important;
 }
-.container{
-    text-align: center;
-}
-.btn{
-    margin-right:15px ;
-}
+
+

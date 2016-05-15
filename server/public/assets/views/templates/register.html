@@ -1,0 +1,58 @@
+<div>
+    <body ng-controller="LoginController">
+
+
+    <div layout-align="center center" layout="column">
+        <div >
+            <h1 class="lead white">Register New User</h1>
+        </div>
+    </div>
+
+    <md-content layout-padding>
+        <div class="add-customer">
+            <div layout-align="center center" layout="column" class="green" >
+                <h3 class="md-title white">Admin Registration</h3>
+            </div>
+
+            <form name="userRegistration" class="inner-form">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>User name</label>
+                        <input ng-model="newUser.username">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Email</label>
+                        <input ng-model="newUser.email">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Password</label>
+                        <input ng-model="newUser.password">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Verify Password</label>
+                        <input ng-model="newUser.verifyPassword">
+                    </md-input-container>
+                </div>
+
+
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button ng-click="goLogin()" class="md-raised md-accent white">Back to Login</md-button>
+
+                    <md-button ng-click="registerUser(newUser)" class="md-raised md-accent white">Submit</md-button>
+                </section>
+            </form>
+        </div>
+    </md-content>
+</div>
+
+
+
+
+</div>
