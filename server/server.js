@@ -40,7 +40,7 @@ app.use(session({
     key: 'user',
     resave: 'true',
     saveUninitialized: false,
-    cookie: {maxage: 60000, secure: false}
+    cookie: {maxage: 6000000, secure: false}
 }));
 
 // start up passport sessions
@@ -50,7 +50,7 @@ app.use(passport.session());
 
 
 /////////////////////
-//routes and server
+//routes and open server
 ////////////////////
 app.use('/parts',parts);
 app.use('/edmunds',edmunds);

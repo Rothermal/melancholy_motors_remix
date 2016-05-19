@@ -20,39 +20,32 @@
 </head>
 <body ng-controller="LoginController" class="login-body" >
 <!--<div class="login-title">-->
-<div  layout-align="center center" layout="column" >
+<div  class="container text-center" >
 <h1 class="login-title" >{{title}}</h1>
 
 <h3>{{login}}</h3>
 <!--<p>{{test}}</p>-->
 </div>
-<div class="login-mdcontent"  >
-    <md-content layout-padding >
+<div class="login-mdcontent container text-center"  >
         <div class="login-div">
             <!-- Set form action and method -->
 
-            <form name="userLogin" class="inner-form">
-                <div layout-gt-sm="row">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>User Name</label>
-                        <input ng-model="User.username" required>
-                    </md-input-container>
+            <form name="userLogin" class="inner-form form-group">
+                <div >
+                    <label>User Name</label>
+                    <input class="form-control"ng-model="User.username" required >
                 </div>
 
-                <div layout-gt-sm="row">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Password</label>
-                        <input ng-model="User.password" type="password" required>
-                    </md-input-container>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" ng-model="User.password" type="password" required>
                 </div>
-                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                    <md-button ng-click="loginFunction(User)" class="md-raised md-accent white ">LOG IN</md-button>
-                    <md-button class="md-raised md-accent white " ng-click="goRegister()" >Register new User</md-button>
-
-                </section>
+                <div>
+                    <button ng-click="loginFunction(User)" class="btn ">LOG IN</button>
+                    <button class="btn white " ng-click="goRegister()" >Register new User</button>
+                </div>
             </form>
         </div>
-    </md-content>
 
 </div>
 <!--</div>-->

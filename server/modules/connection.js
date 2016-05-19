@@ -1,6 +1,6 @@
 var pg = require('pg');
 // connection.js
-var connectionString = process.env.DATABASE_URL ||'postgres://localhost:5432/my_side_jobs_db';
+var connectionString = process.env.DATABASE_URL ||'postgres://localhost:5432/melancholy_motors_db';
 
 if(connectionString == process.env.DATABASE_URL) {
     pg.defaults.ssl = true;
