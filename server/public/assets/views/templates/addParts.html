@@ -1,51 +1,46 @@
-<md-content layout-padding class="taller">
+<div  class="taller container">
     <div class="add-customer">
-        <div layout-align="center center" layout="column" class="green">
+        <div class="green text-center">
             <h3 class="md-title white ">Add a Part</h3>
         </div>
-        <form name="new-parts" class="inner-form">
-            <div layout-gt-sm="row">
-
-            <md-input-container class="md-block" flex-gt-sm>
+        <form name="new-parts" class="inner-form form-group">
+            <div>
+            <div class="form-group">
                 <label>List Of Repairs </label>
-                <md-select  ng-model="repair">
-                    <md-option ng-repeat="repair in repairs.object | orderBy : '-id'" >
+                <select  ng-model="repair"  class="form-control">
+                    <option ng-repeat="repair in repairs.object | orderBy : '-id'" >
                         {{repair.id}}     {{repair.type}} {{repair.first_name}} {{repair.last_name}}
-                    </md-option>
-                </md-select>
-            </md-input-container>
+                    </option>
+                </select>
             </div>
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
+            </div>
+            <div>
+                <div class="form-group">
                     <label>Part Name</label>
-                    <input ng-model="part.name">
-                </md-input-container>
-
-                <md-input-container class="md-block" flex-gt-sm>
+                    <input ng-model="part.name"  class="form-control">
+                </div>
+                <div class="form-group">
                     <label>Description</label>
-                    <input ng-model="part.description">
-                </md-input-container>
+                    <input ng-model="part.description"  class="form-control">
+                </div>
             </div>
-
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
+            <div>
+                <div class="form-group">
                     <label>Vendor </label>
-                    <md-select  ng-model="part.vendor">
-                        <md-option ng-repeat="vendor in vendorArray" >{{vendor}}</md-option>
-                    </md-select>
-                </md-input-container>
-
-                <md-input-container class="md-block" flex-gt-sm>
+                    <select  ng-model="part.vendor"  class="form-control">
+                        <option ng-repeat="vendor in vendorArray" >{{vendor}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Part Cost</label>
-                    <input  type="number"  ng-model="part.cost">
-                </md-input-container>
+                    <input  type="number"  ng-model="part.cost" class="form-control">
+                </div>
             </div>
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                <md-button ng-click="addPart(part,repair)" class="md-raised">Add Part to Repair</md-button>
+            <section>
+                <button ng-click="addPart(part,repair)" class="md-raised">Add Part to Repair</button>
             </section>
-
-
         </form>
     </div>
-</md-content>
 </div>
+</div>
+`
