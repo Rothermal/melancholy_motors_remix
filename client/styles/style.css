@@ -1,5 +1,5 @@
 body{
-    background-color: #4F4D3f;
+    /*background-color: #4F4D3f;*/
 }
 .header {
     background-color: #4F4D3F;
@@ -72,7 +72,7 @@ p{
     padding: 15px;
 }
 .green {
-    background-color: #082A12;
+    /*background-color: #082A12;*/
 }
 .taller {
    height: 700px;
