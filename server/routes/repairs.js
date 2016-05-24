@@ -40,7 +40,7 @@ router.get('/',function(request,response){
 
 
 router.post('/',function(request,response){
-    //console.log('request in vehicles',request.body);
+    console.log('request in vehicles',request.body);
     var repair = {};
     repair.customer_id = request.body.customer_id;
     repair.vehicle_id = request.body.vehicle_id;

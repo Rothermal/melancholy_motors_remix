@@ -4,4 +4,5 @@ node_modules/
 IDEAS.txt
 .env
 database.sql
+.sass-cache
 

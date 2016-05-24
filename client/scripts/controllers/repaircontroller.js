@@ -15,8 +15,8 @@ myApp.controller('RepairController',['$scope','CustomerService',function($scope,
         customerService.customerList();
     };
 
-    $scope.getVehicles = function(id){
-      console.log('clicked',id);
+    $scope.getVehicles = function(customer){
+      console.log('clicked why are you undefined.',customer);
         customerService.vehicleList(id);
         setCustomerId(id);
     };

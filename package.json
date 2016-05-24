@@ -27,13 +27,15 @@
     "needle": "^1.0.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "pg": "^4.5.2"
+    "pg": "^4.5.2",
+    "sass": "^0.5.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0"
   }

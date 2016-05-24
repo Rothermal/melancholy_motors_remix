@@ -8,9 +8,9 @@ module.exports = function(grunt) {
             client : {
                 files: ['client/scripts/**/*.js',
                     'client/views/**/*.html',
-                    'client/styles/*.css'
+                    'client/styles/**/*.scss'
                 ],
-                tasks: ['jshint', 'uglify','copy','cssmin'],
+                tasks: ['jshint', 'uglify','copy','sass'],
                 options: {
                     spawn: false
                 }
@@ -26,17 +26,24 @@ module.exports = function(grunt) {
                 dest: 'server/public/assets/scripts/client.min.js'
             }
         },
-        cssmin: {
-            target: {
-                files: [{
-                    expand: true,
-                    cwd: 'client/styles',
-                    src: '*.css',
-                    dest: 'server/public/assets/styles/',
-                    ext: '.min.css'
-                }]
+        sass: {
+            dist: {
+                files: {
+                    'server/public/assets/styles/style.css': 'client/styles/style.scss'
+                }
             }
         },
+        //cssmin: {
+        //    target: {
+        //        files: [{
+        //            expand: true,
+        //            cwd: 'client/styles',
+        //            src: '*.css',
+        //            dest: 'server/public/assets/styles/',
+        //            ext: '.min.css'
+        //        }]
+        //    }
+        //},
         copy: {
             angular: {
                 expand: true,
@@ -101,7 +108,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    //grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['copy', 'jshint', 'uglify','cssmin']);
+    grunt.registerTask('default', ['copy', 'jshint', 'uglify','sass']);
 };

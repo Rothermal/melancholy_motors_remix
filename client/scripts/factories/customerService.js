@@ -25,8 +25,8 @@ myApp.factory('CustomerService',['$http',function($http){
     var postRepair = function(repair){
         $http.post('/repairs',repair).then(function(response){
             console.log('response in post repairs factory should be repair id.',response);
-            lastPostedRepair_id.object = response.data[0];
-            console.log(lastPostedRepair_id);
+            //lastPostedRepair_id.object = response.data[0];
+            //console.log(lastPostedRepair_id);
         });
 
     };

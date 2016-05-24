@@ -36,6 +36,8 @@ router.get('/',function(request,response){
 });
 
 router.post('/',function(request,response){
+// todo add in new.Customer.fullName as a combo of first plus space last,
+// todo  and insert it into your query. also update making the customer database;
 
    var newCustomer = {};
     newCustomer.first_name = request.body.first_name;

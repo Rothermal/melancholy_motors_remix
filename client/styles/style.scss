@@ -1,5 +1,7 @@
+@import "settings";
+
 body{
-    /*background-color: #4F4D3f;*/
+    background-color: $primary;
 }
 .header {
     background-color: #4F4D3F;

@@ -30,6 +30,7 @@ myApp.controller('VehicleController',['$scope','CustomerService','VehicleService
     };
 
     $scope.getMakesList = function(year){
+        console.log('made it here',year);
         $scope.makes = [];
         $scope.models = [];
         $scope.engines = [];

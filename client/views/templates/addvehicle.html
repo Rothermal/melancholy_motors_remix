@@ -7,9 +7,9 @@
             <div >
                 <div class="form-group">
                     <label>Customer</label>
-                    <select  ng-model="vehicle.customer" class="form-control">
-                        <option ng-repeat="customer in customers.object | orderBy : '-id'" ng-click="saveCustomerId(customer.id)" >{{customer.first_name}} {{customer.last_name}}</option>
-                    </select>
+                    <ng-select  ng-model="vehicle.customer" class="form-control">
+                        <ng-option ng-repeat="customer in customers.object | orderBy : '-id'" ng-change="saveCustomerId(customer.id)" >{{customer.first_name}} {{customer.last_name}}</ng-option>
+                    </ng-select>
                 </div>
             </div>
             <div >
@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label>Engine</label>
                         <select  ng-model="vehicle.engine" class="form-control">
-                            <option ng-repeat="engine in engines.object" " >{{engine.engine.size}}</option>
+                            <option ng-repeat="engine in engines.object">{{engine.engine.size}}</option>
                         </select>
                     </div>
 
@@ -58,18 +58,18 @@
                 </div>
                 </div>
 
-            <div layout-gt-sm="row">
+            <div>
 
-                    <md-input-container class="md-block" flex-gt-sm>
+                    <div class="form-group">
                         <label>Vehicle Identification Number</label>
-                        <input type="text" ng-model="vehicle.vin">
-                    </md-input-container>
+                        <input type="text" ng-model="vehicle.vin" class="form-control">
+                    </div>
             </div>
 
 
 
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                <md-button ng-click="postVehicle(vehicle)" class="md-raised">SUBMIT</md-button>
+            <section class="text-center">
+                <button ng-click="postVehicle(vehicle)" class="btn btn-success">SUBMIT</button>
             </section>
         </form>
 </div>

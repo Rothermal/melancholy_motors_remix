@@ -5,11 +5,12 @@
         </div>
         <form name="new-repair" class="inner-form form-group">
             <div>
-                <div class="form-group" flex-gt-sm>
+                <div class="form-group">
                     <label>Customer</label>
-                    <select  ng-model="repair.customer" class="form-control">
-                        <option ng-repeat="customer in customers.object | orderBy : '-id'" ng-click="getVehicles(customer.id)" >{{customer.first_name}} {{customer.last_name}}</option>
+                    <select  ng-model="repair.customer" ng-change="getVehicles(customer)" class="form-control" ng-options="customer.first_name for customer in customers.object | orderBy : '-id'" >
+                        <!--<ng-option   ></ng-option>-->
                     </select>
+                    <!--{{customer.first_name}} {{customer.last_name}}-->
                 </div>
 
                 <div class="form-group">
@@ -35,10 +36,10 @@
                         <input type="number" ng-model="repair.mileage" class="form-control">
                     </div>
 
-                    <md-input-container class="md-block" flex-gt-sm>
+                    <div class="form-group">
                         <label>Amount billed</label>
-                    <input type="number" ng-model="repair.fee">
-                </md-input-container>
+                    <input type="number" ng-model="repair.fee" class="form-control">
+                </div>
                     <div>
                         <md-datepicker class="date-picker" ng-model="repair.date" md-placeholder="Enter date"></md-datepicker>
                     </div>
@@ -54,9 +55,9 @@
 
 
 
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                <md-button ng-click="postRepair(repair)" class="md-raised">SUBMIT</md-button>
-            </section>
+            <div>
+                <button ng-click="postRepair(repair)" class="btn btn-success">SUBMIT</button>
+            </div>
         </form>
     </div>
 </div>
