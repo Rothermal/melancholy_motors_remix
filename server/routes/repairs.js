@@ -10,6 +10,8 @@ var connectionString = connection;
 
 router.get('/',function(request,response){
 
+    console.log('hit repairs/get');
+
     pg.connect(connectionString,function(err,client,done){
         if(err){
             done();
@@ -20,7 +22,7 @@ router.get('/',function(request,response){
             var query = client.query("SELECT repairs.id, type, description, fee, date_of_repair, first_name, last_name, phone_number, email, year, make, model, engine, transmission, vin, mileage  from repairs INNER JOIN customers ON customers.id = repairs.customer_id INNER JOIN vehicles ON vehicles.id = repairs.vehicle_id;");
         }
         query.on('row',function(row){
-            //console.log(row);
+            console.log(row);
             results.push(row);
         });
         query.on('end',function(){

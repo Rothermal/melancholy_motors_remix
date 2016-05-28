@@ -42,6 +42,7 @@ myApp.controller('VehicleController',['$scope','CustomerService','VehicleService
     };
 
     $scope.getModelsList = function(make){
+        console.log('make in get model list', make);
         $scope.models = [];
         $scope.engines = [];
         for(var i = 0; i<make.models.length;i++) {
@@ -50,6 +51,8 @@ myApp.controller('VehicleController',['$scope','CustomerService','VehicleService
 
     };
     $scope.getEngine = function(model){
+        console.log('in get engines', model);
+        console.log('vehicle in get engine',$scope.vehicle);
         $scope.vehicle.model = model;
         $scope.engines = [];
         vehicleService.getEngines($scope.vehicle);

@@ -43,8 +43,8 @@ myApp.factory('VehicleService',['$http',function($http){
     var getEngineList = function(vehicle){
       console.log(vehicle);
       var  year = vehicle.year;
-      var  make = vehicle.make;
-      var  model = vehicle.model;
+      var  make = vehicle.make.name;
+      var  model = vehicle.model.name;
         $http.get('/edmunds/engine/'+ year+'/'+ make+'/'+ model).then(function(response){
             console.log(response.data.styles);
             Engines.object = response.data.styles;

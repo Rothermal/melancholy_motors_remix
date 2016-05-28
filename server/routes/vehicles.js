@@ -39,9 +39,9 @@ router.get('/:id',function(request,response){
 router.post('/',function(request,response){
     console.log('request in vehicles post ',request.body);
     var year = request.body.year;
-    var make = request.body.make;
-    var model = request.body.model;
-    var engine = request.body.engine;
+    var make = request.body.make.name;
+    var model = request.body.model.name;
+    var engine = request.body.engine.engine.size;
     var transmission = request.body.transmission;
     var vin = request.body.vin;
     var customer_id = request.body.customer_id;

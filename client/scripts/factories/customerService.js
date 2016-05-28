@@ -16,6 +16,7 @@ myApp.factory('CustomerService',['$http',function($http){
    };
 
     var getVehicles = function(id){
+        console.log('id in get vehicles',id);
         $http.get('/vehicles/'+id).then(function(response){
            console.log('response in factory, vehicle list',response) ;
             Vehicles.object = response.data;

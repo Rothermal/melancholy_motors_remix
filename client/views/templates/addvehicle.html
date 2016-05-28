@@ -1,4 +1,4 @@
-<div class="taller container">
+<div class=" taller container">
     <div class="add-customer">
         <div class="green text-center">
             <h3 class="md-title white">Add a New Vehicle</h3>
@@ -7,9 +7,9 @@
             <div >
                 <div class="form-group">
                     <label>Customer</label>
-                    <ng-select  ng-model="vehicle.customer" class="form-control">
-                        <ng-option ng-repeat="customer in customers.object | orderBy : '-id'" ng-change="saveCustomerId(customer.id)" >{{customer.first_name}} {{customer.last_name}}</ng-option>
-                    </ng-select>
+                    <select  ng-model="customer" class="form-control" ng-options="customer.first_name for customer in customers.object | orderBy : '-id'" ng-change="saveCustomerId(customer.id)" >
+                        <!--{{customer.first_name}} {{customer.last_name}}</option>-->
+                    </select>
                 </div>
             </div>
             <div >
@@ -17,39 +17,39 @@
             </div>
 
             <div>
-                <div class="form-group">
+                <div class="form-group col-xs-4">
                     <label>Vehicle Year</label>
-                    <select  ng-model="vehicle.year" class="form-control">
-                        <option ng-repeat="year in years" ng-click="getMakesList(year)" >{{year}}</option>
+                    <select  ng-model="vehicle.year" class="form-control" ng-options="year for year in years" ng-change="getMakesList(vehicle.year)"  >
+                        <!--{{year}}</ng-option>-->
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-xs-4">
                     <label>Vehicle Make</label>
-                    <select  ng-model="vehicle.make" class="form-control">
-                        <option ng-repeat="make in makes.object" ng-click="getModelsList(make)" >{{make.name}}</option>
+                    <select  ng-model="vehicle.make" class="form-control" ng-options="make.name for make in makes.object" ng-change="getModelsList(vehicle.make)"  >
+                        <!--&gt;{{make.name}}</ng-option>-->
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-xs-4">
                     <label>Vehicle model</label>
-                    <select  ng-model="vehicle.model" class="form-control">
-                        <option ng-repeat="model in models " ng-click="getEngine(model.name)">{{model.name}}</option>
+                    <select  ng-model="vehicle.model" class="form-control"  ng-options="model.name for model in models " ng-change="getEngine(vehicle.model)" >
+                       <!--&gt;{{model.name}}</ng-option>-->
                     </select>
                 </div>
 
             </div>
 
                 <div>
-                    <div class="form-group">
+                    <div class="form-group col-xs-6 ">
                         <label>Engine</label>
-                        <select  ng-model="vehicle.engine" class="form-control">
-                            <option ng-repeat="engine in engines.object">{{engine.engine.size}}</option>
+                        <select  ng-model="vehicle.engine" class="form-control"  ng-options="engine.engine.size for engine in engines.object" >
+                           <!--&gt;{{engine.engine.size}}</option>-->
                         </select>
                     </div>
 
 
-                <div class="form-group">
+                <div class="form-group col-xs-6 ">
                     <label>Transmission</label>
                     <select  ng-model="vehicle.transmission" class="form-control">
                         <option>Automatic</option>
