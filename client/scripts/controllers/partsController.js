@@ -20,9 +20,7 @@ myApp.controller('PartsController',['$scope','CustomerService','PartsService','H
 
     $scope.addPart = function(part,repair) {
         console.log('clicked',part,repair);
-        // todo need to figure out a better way to handle this.
-        // this is a dirty fix for now. have ideas for better ways to track repairs and parts, ran out of time for implementation.
-        part.repair_id = repair.charAt(0)+repair.charAt(1)+repair.charAt(2);
+        part.repair_id = repair.id;
         partsService.postParts(part);
         $scope.part = {};
     };
