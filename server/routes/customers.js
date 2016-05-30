@@ -19,7 +19,15 @@ router.get('/',function(request,response){
             var query = client.query("SELECT * FROM customers");
         }
         query.on('row',function(row){
-            console.log(row);
+            for (var key in row) {
+                if (row.hasOwnProperty(key)) {
+                        if(row[key] === null ){
+                            row[key] = '';
+                        }
+                    }
+                }
+
+            console.log('all the customers',row);
             results.push(row);
         });
         query.on('end',function(){
@@ -36,8 +44,7 @@ router.get('/',function(request,response){
 });
 
 router.post('/',function(request,response){
-// todo add in new.Customer.fullName as a combo of first plus space last,
-// todo  and insert it into your query. also update making the customer database;
+
 
    var newCustomer = {};
     newCustomer.first_name = request.body.first_name;

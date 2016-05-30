@@ -7,17 +7,13 @@
             <div>
                 <div class="form-group">
                     <label>Customer</label>
-                    <select  ng-model="customer"  class="form-control" ng-change="getVehicles(customer)" ng-options="customer.first_name for customer in customers.object | orderBy : '-id' "  >
-                        <!--<option   >-->
-                            <!--{{customer.first_name}} {{customer.last_name}}-->
-                        <!--</option>-->
+                    <select  ng-model="customer"  class="form-control" ng-change="getVehicles(customer)" ng-options="(customer.first_name +' '+customer.last_name) for customer in customers.object | orderBy : '-id' "  >
+
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label>Vehicle</label>
-                    <select  ng-model="repair.vehicle" class="form-control">
-                        <option ng-repeat="vehicle in vehicles.object" ng-click="setVehicleid(vehicle.id)" >{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</option>
+                    <select  ng-model="vehicle" class="form-control" ng-options="(vehicle.year + ' ' + vehicle.make +' '+ vehicle.model) for  vehicle in vehicles.object" ng-change="setVehicleid(vehicle.id)" >
                     </select>
                 </div>
             </div>
