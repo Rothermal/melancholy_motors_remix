@@ -3,6 +3,10 @@
 body{
     background-color: $primary;
 }
+.st-selected {
+    background-color: #202566 !important;
+    color: white !important;
+}
 .header {
     background-color: #4F4D3F;
     height: 135px;

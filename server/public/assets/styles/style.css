@@ -1,5 +1,9 @@
 body {
-  background-color: #a1f68e; }
+  background-color: #247126; }
+
+.st-selected {
+  background-color: #202566 !important;
+  color: white !important; }
 
 .header {
   background-color: #4F4D3F;

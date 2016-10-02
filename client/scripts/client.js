@@ -4,8 +4,7 @@
 var myApp = angular.module('myApp',['ngRoute', "ngAnimate",'ui.bootstrap','smart-table']);
 
 
-myApp.config(['$routeProvider','$locationProvider',
-    function($routeProvider,$locationProvider) {
+myApp.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
 
 
     $routeProvider

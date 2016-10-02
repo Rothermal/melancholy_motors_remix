@@ -12,18 +12,18 @@
     <table st-table="displayedResults" st-safe-src="repairs.object" class="table table-striped">
         <thead>
         <tr >
-            <th st-sort="">Repair Number</th>
-            <th st-sort="">Customer</th>
-            <th st-sort="">Vehicle</th>
-            <th st-sort="">Repair type</th>
-            <th st-sort="">Date of Repair</th>
-            <th st-sort="">Mileage</th>
+            <th st-sort="id">Repair Number</th>
+            <th st-sort="last_name">Customer</th>
+            <th st-sort="year">Vehicle</th>
+            <th st-sort="type">Repair type</th>
+            <th st-sort="date_of_repair">Date of Repair</th>
+            <th st-sort="mileage">Mileage</th>
         </tr>
 
         </thead>
         <tbody>
-        <!--currently inop, need to inject the data into this controller.-->
-        <tr st-select-row="result" st-select-mode="single"  ng-repeat="result in displayedResults">
+        <tr st-select-row="result" st-select-mode="single" ng-click="getParts(result.id); edit('lg',result) "
+            ng-repeat="result in displayedResults">
             <td>{{result.id}}</td>
             <td>{{result.first_name}} {{result.last_name}}</td>
             <td>{{result.year}} {{result.make}} {{result.model}}</td>
@@ -42,4 +42,3 @@
     </table>
 </div>
 
-<!--ng-click="getParts(repair.id); edit($event,repair) " -->
