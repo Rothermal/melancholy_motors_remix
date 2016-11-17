@@ -41,9 +41,9 @@
                         <input type="number" ng-model="repair.mileage" class="form-control">
                     </div>
 
-                    <div>
-                        <md-datepicker class="date-picker" ng-model="repair.date_of_repair " md-placeholder="Enter Repair date"></md-datepicker>
-                    </div>
+                    <!--<div>-->
+                        <!--<md-datepicker class="date-picker" ng-model="repair.date_of_repair " md-placeholder="Enter Repair date"></md-datepicker>-->
+                    <!--</div>-->
 
                 </div>
 
@@ -128,7 +128,7 @@
             <button class="btn-primary blue btn" ng-click="answer('updated', repair)" >
                 Save
             </button>
-            <button class="btn-warning white btn" ng-click="cancel('not useful')">
+            <button class="btn-warning white btn" ng-click="cancel()">
                 Cancel
             </button>
             <button class="btn-danger red btn" ng-click="deleteRepair(repair.id); cancel('not useful')">

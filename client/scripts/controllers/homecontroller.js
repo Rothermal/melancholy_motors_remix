@@ -22,6 +22,7 @@ myApp.controller('HomeController',['$scope','$http', '$filter',"$uibModal",'Cust
         // builds parts list for edit form.
         $scope.part = {};
         $scope.parts = [];
+        $scope.repair = {};
 
     $scope.deleteRepair = function(repairId){
       console.log('clicked',repairId);
@@ -35,9 +36,6 @@ myApp.controller('HomeController',['$scope','$http', '$filter',"$uibModal",'Cust
         $scope.repairs =  homeService.repairs;
         $scope.count = $scope.repairs.length;
     };
-
-
-
 
     $scope.getParts = function(repairId){
         console.log(repairId);
@@ -55,51 +53,18 @@ myApp.controller('HomeController',['$scope','$http', '$filter',"$uibModal",'Cust
         part.cost = repair.cost;
         part.repair_id = repair.id;
         partsService.postParts(part);
-
         $scope.repair.part_name = "";
         $scope.repair.partDescription = "";
         $scope.repair.vendor = "";
         $scope.repair.cost = "";
-
-
     };
 
 
 
-//Edit function - opens modal with the selected repair and all info related to it.
-//        $scope.edit = function(ev, repair) {
-//            console.log('hit edit');
-//            console.log('repair in edit',repair);
-//            repair.date_of_repair = new Date(repair.date_of_repair);
-//            $scope.repair = repair;
-//            $scope.repair.parts = $scope.parts;
-//            console.log($scope.repair);
-//            $uibModal.show({
-//                    templateUrl:'/assets/views/templates/editRepair.html',
-//                    parent: angular.element(document.body),
-//                    targetEvent: ev,
-//                    size: 'lg',
-//                    clickOutsideToClose:true,
-//                    //fullscreen: useFullScreen,
-//                })
-//                .then(function(answer) {
-//                   $scope.getRepairs();
-//                }, function() {
-//                $scope.getRepairs();
-//            });
-//            $scope.$watch(function() {
-//                return $mdMedia('xs') || $mdMedia('sm');
-//            }, function(wantsFullScreen) {
-//                $scope.customFullscreen = (wantsFullScreen === true);
-//            });
-//        };
-//
-//        $scope.hide = function() {
-//            $uibModal.hide();
-//        };
-//        $scope.cancel = function() {
-//            $uibModal.cancel();
-//        };
+
+        $scope.cancel = function () {
+            $uibmodal.dismiss();
+        };
 //        $scope.answer = function(response, repair) {
 //            $uibModal.hide(response);
 //            homeService.updateRepair(repair);
@@ -111,6 +76,7 @@ myApp.controller('HomeController',['$scope','$http', '$filter',"$uibModal",'Cust
 
         $scope.edit = function(size, repair) {
             console.log("open me a modal", repair);
+            $scope.repair = repair;
 
             var modalInstance = $uibModal.open({
                 animation: true,
@@ -118,13 +84,12 @@ myApp.controller('HomeController',['$scope','$http', '$filter',"$uibModal",'Cust
                 controller: 'HomeController',
                 size: size,
                 keyboard: true,
-                backdrop: 'static',
-                resolve: {
-                    results: function() { return repair; }
-                }
+                backdrop: 'static'
+                //resolve: {
+                //    repair : function() { return $scope.repair; }
+                //}
             });
         };
-
 
 
         $scope.getRepairs();
